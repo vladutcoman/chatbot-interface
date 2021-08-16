@@ -1,0 +1,61 @@
+.content__header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ebe7fb;
+}
+.current-chatting-user {
+  display: flex;
+  align-items: center;
+}
+.current-chatting-user p {
+  margin: 0;
+  font-weight: 600;
+}
+.content__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.settings .btn-nobg {
+  color: #000;
+}
+
+.dropbtn {
+  border-radius: 25px;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 15px;
+  border: none;
+  margin-left: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: lightskyblue;}
