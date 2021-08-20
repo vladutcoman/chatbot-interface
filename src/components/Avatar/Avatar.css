@@ -6,12 +6,13 @@
   margin-right: 20px;
   position: relative;
 }
+
 .avatar img {
   max-width: 100%;
   object-fit: cover;
 }
 
-.isOnline {
+/* .isOnline {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -21,10 +22,12 @@
   background-color: #ddd;
   border-radius: 50%;
   border: 2px solid #fff;
-}
+} */
+
 .isOnline.active {
   background-color: tomato;
 }
+
 .avatar-img {
   overflow: hidden;
   border-radius: 50%;

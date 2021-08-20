@@ -1,17 +1,23 @@
+import { useRef } from 'react';
 import './MessageForm.css';
 
-function MessageForm() {
+function MessageForm(props: any) {
+  const messageInputRef = useRef(null);
+
   return (
     <div className="content__footer">
-      <div className="sendNewMessage">
-        <input
-          type="text"
-          placeholder="Type a message here"
-        />
-        <button className="btnSendMsg" id="sendMsgBtn">
-          &uarr;
-        </button>
-      </div>
+      {/* <form action=""> */}
+        <div className="sendNewMessage">
+          <input
+            type="text"
+            placeholder="Type a message here"
+            ref={messageInputRef}
+          />
+          <button className="btnSendMsg" id="sendMsgBtn" onClick={() => props.onMsgSend(messageInputRef)}>
+            &uarr;
+          </button>
+        </div>
+      {/* </form> */}
     </div>
   );
 }
