@@ -21,7 +21,7 @@
 
 .dropbtn {
   border-radius: 25px;
-  background-color: dodgerblue;
+  background-color: #4462ff;
   color: white;
   font-size: 15px;
   border: none;
@@ -58,4 +58,4 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: lightskyblue;}
+.dropdown:hover .dropbtn {background-color: #4462ff8f;}

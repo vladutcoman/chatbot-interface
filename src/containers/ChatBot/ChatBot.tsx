@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import ChatBody from '../../components/ChatBody/ChatBody';
 import ChatUser from '../../components/ChatUser/ChatUser';
 import MessageForm from '../../components/MessageForm/MessageForm';
 import './ChatBot.css';
 
 function ChatBot() {
-
+// Maybe useState?
   let items = [
     {
       key: 1,
@@ -35,17 +36,23 @@ function ChatBot() {
       msg: "Awesome these days.",
     }
   ];
+  const [messages, setMessages] = useState(items);
+  const [msgIndex, setMsgIndex] = useState(5);
+
+
 
   function onMsgSend(msg: any) {
-    console.log(msg.current.value);
-    items.push({
-      key: 5,
+    setMsgIndex(msgIndex + 1);
+    const newMessage = {
+      key: msgIndex,
       image:
         "https://www.shutterstock.com/image-vector/male-avatar-profile-picture-vector-illustration-221431012",
       type: "",
       msg: msg.current.value,
-    })
-    console.log(items);
+    }
+
+    setMessages(state => [...state, newMessage])
+    console.log({messages, msgIndex});
     
   }
 
@@ -54,7 +61,7 @@ function ChatBot() {
     <div className="ChatBot">
       <div className="ChatContent">
         <ChatUser />
-        <ChatBody chatItms={items}/>
+        <ChatBody chatItms={messages}/>
         <MessageForm onMsgSend={onMsgSend}/>  
       </div>
     </div>
