@@ -1,31 +1,31 @@
 import Avatar from '../Avatar/Avatar';
 import './ChatUser.css';
+import rihanna from '../../assets/images/rihanna.jpeg';
+import cent from '../../assets/images/50cent.jpeg';
 
-function ChatUser() {
+function ChatUser(props: any) {
+  console.log(props.personality)
   return (
     <div className="content__header">
       <div className="blocks">
         <div className="current-chatting-user">
           <Avatar
-            isOnline="active"
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU"
+            image={props.personality.image}
           />
-          <p>Tim Hover</p>
+          <p>{props.personality.name}</p>
           <p> 
             <div className="dropdown">
               <button className="dropbtn">&dArr;</button>
               <div className="dropdown-content">
-                <a>
-                  <Avatar
-                    isOnline="active"
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU"
-                  />
+                <a 
+                  className={props.personality.image === rihanna ? "disable" : ""}
+                  onClick={() => props.onDropdownClick(rihanna)}>
+                  <Avatar image={rihanna} />
                 </a>
-                <a>
-                  <Avatar
-                    isOnline="active"
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU"
-                  />
+                <a 
+                  className={props.personality.image === cent ? "disable" : ""}
+                  onClick={() => props.onDropdownClick(cent)}>
+                  <Avatar image={cent} />
                 </a>
               </div>
             </div>

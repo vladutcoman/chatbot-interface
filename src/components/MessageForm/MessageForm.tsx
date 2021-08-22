@@ -6,18 +6,19 @@ function MessageForm(props: any) {
 
   return (
     <div className="content__footer">
-      {/* <form action=""> */}
-        <div className="sendNewMessage">
-          <input
-            type="text"
-            placeholder="Type a message here"
-            ref={messageInputRef}
-          />
-          <button className="btnSendMsg" id="sendMsgBtn" onClick={() => props.onMsgSend(messageInputRef)}>
-            &uarr;
-          </button>
-        </div>
-      {/* </form> */}
+      <div className="sendNewMessage">
+        <input
+          type="text"
+          placeholder="Type a message here"
+          ref={messageInputRef}
+        />
+        <button 
+          className="btnSendMsg"
+          id="sendMsgBtn"
+          onClick={() => props.onSendMessage(messageInputRef)}>
+          &uarr;
+        </button>
+      </div>
     </div>
   );
 }
