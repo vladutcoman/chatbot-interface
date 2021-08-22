@@ -9,12 +9,13 @@ export const FIRST_MESSAGE: Message = {
   message: "How cand I help you?",
 }
 
-export const DEFAULT_PERSONALITY: Personality = {
-  name: 'Rihanna',
-  image: rihanna
-}
-
 export const PERSONALITIES_MAP: {[key: string]: string} = {
   [rihanna]: 'Rihanna',
   [cent]: '50 Cent'
 }
+
+export const DEFAULT_PERSONALITY: Personality = {
+  name: PERSONALITIES_MAP[rihanna],
+  image: rihanna
+}
+

@@ -8,7 +8,9 @@ function ChatItem(props: any) {
       className={`chat__item ${props.user ? props.user : ""}`}
     >
       <div className="chat__item__content">
-        <div className="chat__msg">{props.msg}</div>
+        <div className="chat__msg">
+          {props.msg}
+        </div>
       </div>
       <Avatar isOnline="active" image={props.image} />
     </div>

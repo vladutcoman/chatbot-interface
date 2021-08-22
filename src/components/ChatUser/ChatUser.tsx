@@ -4,7 +4,7 @@ import rihanna from '../../assets/images/rihanna.jpeg';
 import cent from '../../assets/images/50cent.jpeg';
 
 function ChatUser(props: any) {
-  console.log(props.personality)
+
   return (
     <div className="content__header">
       <div className="blocks">
@@ -14,21 +14,23 @@ function ChatUser(props: any) {
           />
           <p>{props.personality.name}</p>
           <p> 
-            <div className="dropdown">
+            <span className="dropdown">
               <button className="dropbtn">&dArr;</button>
-              <div className="dropdown-content">
-                <a 
+              <span className="dropdown-content">
+                <button
                   className={props.personality.image === rihanna ? "disable" : ""}
-                  onClick={() => props.onDropdownClick(rihanna)}>
+                  onClick={() => props.onDropdownClick(rihanna)}
+                >
                   <Avatar image={rihanna} />
-                </a>
-                <a 
+                </button>
+                <button 
                   className={props.personality.image === cent ? "disable" : ""}
-                  onClick={() => props.onDropdownClick(cent)}>
+                  onClick={() => props.onDropdownClick(cent)}
+                >
                   <Avatar image={cent} />
-                </a>
-              </div>
-            </div>
+                </button>
+              </span>
+            </span>
           </p>
         </div>
       </div>

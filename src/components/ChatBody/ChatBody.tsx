@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import './ChatBody.css';
 import ChatItem from './ChatItem';
 
@@ -18,7 +17,6 @@ function ChatBody(props: any) {
             />
           );
         })}
-        {/* <div ref={props.messagesEndRef} /> */}
       </div>
       <div ref={props.messagesEndRef} />
     </div>
