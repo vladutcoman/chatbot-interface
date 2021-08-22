@@ -73,6 +73,10 @@ function ChatBot() {
     return (messages.length === 1) ? "" : messages[messages.length - 1].message;
   }
 
+  function clearInput(msg: any) {
+    msg.current.value = '';
+  }
+
   function onSendMessage(msg: any) {
     const message = msg.current.value;
     if (message.trim()) {
@@ -83,15 +87,17 @@ function ChatBot() {
       // api.askQuestion(message, previousAnswer).then(
       //   (response: any) => {
       //     addToConversation(response.answer, personality.image, key + 1, 'other');
+      //     clearInput(msg);
       //   },
       //   error => {
       //     // Do somethinf on error or remove this
       //   }
-      // )
+      // );
 
       // TODO: remove this and uncomment above code
       setTimeout(() => {
         addToConversation('Vladut is AWESOME', personality.image, key + 1, 'other');
+        clearInput(msg);
       }, 200);
 
       scrollDOwn();

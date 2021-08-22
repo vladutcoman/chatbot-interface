@@ -16,6 +16,14 @@
   height: 100%;
 }
 
+
+@media (max-height: 700px) and (min-width: 400px) {
+  .content__body {
+    margin-top: 0;
+    height: 60%;
+  }
+}
+
 .chat__item {
   display: flex;
   justify-content: flex-end;
