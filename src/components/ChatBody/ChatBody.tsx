@@ -1,5 +1,5 @@
-import './ChatBody.css';
 import ChatItem from './ChatItem';
+import './ChatBody.css';
 
 function ChatBody(props: any) {
 
