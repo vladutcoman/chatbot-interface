@@ -4,7 +4,6 @@ import cent from '../../assets/images/50cent.jpeg';
 import './ChatUser.css';
 
 function ChatUser(props: any) {
-
   return (
     <div className="content__header">
       <div className="blocks">

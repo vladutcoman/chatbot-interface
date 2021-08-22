@@ -16,7 +16,7 @@ function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
 
-  function resetChat(image: string) {
+  function resetChat(image: string): void {
     switch(image) {
       case rihanna:
         setMessages([RIRI_FIRST_MESSAGE]);
@@ -29,13 +29,13 @@ function ChatBot() {
     }
   }
 
-  function changePersonality(image: string) {
+  function changePersonality(image: string): void {
     const newPersonality: Personality = {
       name: PERSONALITIES_MAP[image],
       image: image
     }
 
-    // api.changePersonality(PERSONALITIES_MAP[image]).then(
+    // api.changePersonality({name: PERSONALITIES_MAP[image]}).then(
     //   (response) => {
     //     // Do somtheing on succes before updating the interface
     //     setPersonality(newPersonality);
@@ -51,7 +51,7 @@ function ChatBot() {
     resetChat(image);
   }
 
-  function addToConversation(msg: string, img: any, key: number, userType = "") {
+  function addToConversation(msg: string, img: string, key: number, userType = ""): void {
     const newMessage = {
       key: key,
       image: img,
@@ -61,7 +61,7 @@ function ChatBot() {
     setMessages(state => [...state, newMessage]);
   }
 
-  function scrollDOwn() {
+  function scrollDOwn(): void {
     setTimeout(() => {
       if (messagesEndRef.current !== null) {
         messagesEndRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
@@ -69,22 +69,22 @@ function ChatBot() {
     }, 300);
   }
 
-  function getPreviousAnswer() {
+  function getPreviousAnswer(): string {
     return (messages.length === 1) ? "" : messages[messages.length - 1].message;
   }
 
-  function clearInput(msg: any) {
+  function clearInput(msg: any): void {
     msg.current.value = '';
   }
 
-  function onSendMessage(msg: any) {
+  function onSendMessage(msg: any): void {
     const message = msg.current.value;
     if (message.trim()) {
       const key = messages.length;
       const previousAnswer = getPreviousAnswer();
       addToConversation(message, user, key);
 
-      // api.askQuestion(message, previousAnswer).then(
+      // api.askQuestion({question: message, previousAnswer}).then(
       //   (response: any) => {
       //     addToConversation(response.answer, personality.image, key + 1, 'other');
       //     clearInput(msg);
@@ -103,7 +103,6 @@ function ChatBot() {
       scrollDOwn();
     }
   }
-
 
   return (
     <div className="ChatBot">

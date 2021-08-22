@@ -2,7 +2,6 @@ import ChatItem from './ChatItem';
 import './ChatBody.css';
 
 function ChatBody(props: any) {
-
   return (
     <div className="content__body">
       <div className="chat__items">

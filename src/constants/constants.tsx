@@ -2,6 +2,10 @@ import { Message, Personality } from "../types/types";
 import rihanna from '../assets/images/rihanna.jpeg';
 import cent from '../assets/images/50cent.jpeg';
 
+
+//TODO: Update api url
+export const API_URL = "";
+
 export const RIRI_FIRST_MESSAGE: Message = {
   key: 0,
   image: rihanna,
@@ -26,6 +30,4 @@ export const DEFAULT_PERSONALITY: Personality = {
   image: rihanna
 };
 
-//TODO: Update api url
-export const API_URL = "";
-
+export const ENTER_KEY = 'Enter';

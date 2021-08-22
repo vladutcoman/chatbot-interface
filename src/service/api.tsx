@@ -1,24 +1,22 @@
 import { API_URL } from "../constants/constants";
+import { PUTAskRequest, PUTPersonalityRequest } from "../types/types";
 
-export function changePersonality(name: string) {
+export function changePersonality(body: PUTPersonalityRequest) {
   return fetch(`${API_URL}/personality`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({name: name}),
+    body: JSON.stringify(body),
   });
 }
 
-export function askQuestion(question: string, previousAnswer: string) {
+export function askQuestion(body: PUTAskRequest) {
   return fetch(`${API_URL}/ask`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      question: question,
-      previousAnswer: previousAnswer
-    }),
+    body: JSON.stringify(body),
   });
 }
